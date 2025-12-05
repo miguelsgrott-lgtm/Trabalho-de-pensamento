@@ -1,33 +1,138 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <title>Em busca da cidade perdida</title>
+<meta charset="UTF-8">
+<title>História RPG</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #1b1b1b;
+        color: #fff;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    main {
+        max-width: 600px;
+    }
+
+    .passo {
+        display: none;
+    }
+
+    .passo.ativo {
+        display: block;
+    }
+
+    button {
+        display: block;
+        margin: 10px auto;
+        padding: 12px 20px;
+        background: #5a5aff;
+        border: none;
+        color: white;
+        cursor: pointer;
+        border-radius: 8px;
+        font-size: 16px;
+        width: 80%;
+        max-width: 300px;
+    }
+
+    button:hover {
+        background: #7777ff;
+    }
+</style>
 </head>
 <body>
-    <main>
-        <div class="passo ativo" id="passo-0">
-            <img src="cenario-passo0.png" alt="">
-            <p>Um dia desses, dentro de um livro da biblioteca da escola, eu descobri uma carta antiga sobre uma cidade perdida, escondida por riquezas e belezas naturais. Nessa carta, a autora deixa algumas pistas para encontrar essa cidade e eu decidi segui-las!</p>
-            <button class="btn-proximo" data-proximo="1">Rio de Janeiro</button>
-            <button class="btn-proximo" data-proximo="2">Pernambuco</button>
-        </div>
-        <div class="passo" id="passo-1">
-            <p>Você começa sua jornada no Rio de Janeiro, subindo o Pico da Tijuca ao amanhecer para encontrar a primeira pista.</p>
-            <button class="btn-proximo" data-proximo="3">Procurar a pista no topo do pico</button>
-            <button class="btn-proximo" data-proximo="4">Desistir e voltar para casa</button>
-        </div>
-        <div class="passo" id="passo-2">
-            <p>Em Pernambuco, você visita a histórica cidade de Olinda. Na carta, uma das pistas indica que para localizar a entrada para a cidade perdida você deve procurar a próxima pista em um dos pontos turísticos da cidade. Por qual você começa?</p>
-            <button class="btn-proximo" data-proximo="5">Investigar as igrejas antigas</button>
-            <button class="btn-proximo" data-proximo="6">Explorar as praias próximas</button>
-        </div>
-    </main>
-    <script src="script.js"></script>
+
+<main>
+
+    <div class="passo ativo" id="passo-0">
+        <p>Você é um heroi que recebeu um chamado que dizia que uma vila ao norte dali havia sumido misteriosamente, seu objetivo é investigar o que aconteceu. Você tem duas pistas qual ira seguir?</p>
+        <button class="btn-proximo" data-proximo="1">pegadas gigantes</button>
+        <button class="btn-proximo" data-proximo="2">simbolos misteriosos</button>
+    </div>
+
+    <div class="passo" id="1">
+        <p>Você decide seguir as pegadas que levavam a FLORESTA SOMBRIA lugar que o dia mais claro parece a noite mais escura, elas levaram a um acampamento destruido e là uma fera gigante com dentes enormes e asas de dragão. O que você faz?</p>
+        <button class="btn-proximo" data-proximo="3">Luto contra a fera</button>
+        <button class="btn-proximo" data-proximo="4">Voltar e contar o q viu</button>
+    </div>   
+
+    <div class="passo" id="4">
+        <p>Você volta e conta o que viu, e eles falam que mandaram um grupo seguir os simbolos e descobriram que um velho mago estava por traz de tudo isso, e a fera era só distraçâo, a vila esta escondira no topo de uma montanha. o que me diz?</p>
+        <button class="btn-proximo" data-proximo="10">vou até a vila </button>
+        <button class="btn-proximo" data-proximo="9">abandono a missão</button>
+    </div>  
+
+    <div class="passo" id="3">
+        <p>Você decide lutar contra a fera, mas ela estava proteigda com um tipo de magia seus golpes não fizeram nenhum efeito, e ela com um golpe te derrota...</p>
+    </div>  
+
+    <div class="passo" id="9">
+        <p>Você abandonou a misssão</p>
+    </div>
+
+    <div class="passo" id="2">
+        <p>Você decide seguir os simbolos e ver onde eles te levavam, o lugar era as RUINAS ABANDONADAS lá estava um velho mago, o mago é cego mas tem boa audição, o que você fará?</p>
+        <button class="btn-proximo" data-proximo="5">ir furtivamente ouvir o que esta falando</button>
+        <button class="btn-proximo" data-proximo="6">saltar e golpea-lo pelas costas </button>
+    </div>  
+
+    <div class="passo" id="5">
+        <p>você foi furtivamente atras do mago para ouvir o que ele dizia... mas ele tem BOA AUDIÇÃO e te ouviu te tacando um feitiço te tranformando numa galinha</p>
+    </div> 
+
+    <div class="passo" id="6">
+        <p>O golpe deu certo, ele nem percebeu sua presença, você deixou ele nocauteado e forçou ele a dizer o que sabe sobre a vila... você descobriu que le é quem tava por traz de tudo e foi ele com um feitiço levou a vila a outro lugar, no topo de uma montanha</p>
+        <button class="btn-proximo" data-proximo="7">você volta ao inicio contar o que descobriu</button>
+        <button class="btn-proximo" data-proximo="8">Você MATA ELE</button>
+    </div>  
+
+    <div class="passo" id="8">
+        <p>Calma-lá não precisa de tudo isso</p>
+    </div>
+
+    <div class="passo" id="7">
+        <p>Você volta e conta o que descobriu, eles falam que mandaram um grupo seguir as pegadas e tiveram que lutar com uma fera, com muito esforço conseguiram derrota-lá. agora é com você:</p>
+        <button class="btn-proximo" data-proximo="10">vou até a vila</button>
+        <button class="btn-proximo" data-proximo="9">abandona a missão</button>
+    </div>  
+
+    <div class="passo" id="10">
+        <p>subir a montanha não foi facil mas decidido a encontrar e salvar a vila você não desiste, lá emcima você vê a vila iluminada pelo crepusculo, não parecia destruida pelo contrario, bem, muito bem todos estavam felizes preferiram ficar ali do que no seu antigo lugar. O mago que queria fazer o mal na verdade fez um grando bem.</p>
+        <button class="btn-proximo" data-proximo="11">finalizar a missão</button>
+    </div> 
+
+    <div class="passo" id="11">
+        <p>FIM!!!</p>
+    </div>
+
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const botoes = document.querySelectorAll(".btn-proximo");
+
+    botoes.forEach(botao => {
+        botao.addEventListener("click", () => {
+            const proximo = botao.getAttribute("data-proximo");
+
+            document.querySelectorAll(".passo").forEach(p => p.classList.remove("ativo"));
+
+            const alvo = document.getElementById(proximo);
+            alvo.classList.add("ativo");
+        });
+    });
+});
+</script>
+
 </body>
 </html>
+
